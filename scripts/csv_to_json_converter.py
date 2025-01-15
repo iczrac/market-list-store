@@ -96,9 +96,9 @@ def convert_csv_to_json(csv_file_path, json_file_path):
         "stocks": stocks
     }
     
-    # 写入JSON文件
+    # 写入JSON文件,不包含换行和缩进
     with open(json_file_path, 'w', encoding='utf-8') as jsonfile:
-        json.dump(json_data, jsonfile, ensure_ascii=False, indent=2)
+        json.dump(json_data, jsonfile, ensure_ascii=False, indent=None, separators=(',', ':'))
         print(f"成功写入 {len(stocks)} 条记录")
 
 def main():
